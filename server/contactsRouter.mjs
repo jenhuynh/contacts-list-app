@@ -11,7 +11,8 @@ contactsRouter.get("/", async (request, response) => {
 
 contactsRouter.use(express.json());
 contactsRouter.post("/", async (request, response) => {
-  const contact = await db.addContact(request.body.name);
+  console.log(request.body);
+  const contact = await db.createContact(request.body);
   response.status(201).json(contact);
 });
 
