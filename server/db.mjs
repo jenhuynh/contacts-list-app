@@ -8,6 +8,14 @@ export const getTasks = () => db.any("SELECT * FROM tasks");
 export const addTask = (name) =>
   db.one("INSERT INTO tasks(name) VALUES(${name}) RETURNING *", { name });
 
+export const getContacts = () => db.any("SELECT * FROM contacts");
+
+export const addContact = (contact) =>
+  db.one(
+    "INSERT INTO contacts(name, email, phone_number, notes ) VALUES(${name}, ${email}, ${phone_number}, ${notes} ) RETURNING *",
+    { contact },
+  );
+
 function initDb() {
   let connection;
 
