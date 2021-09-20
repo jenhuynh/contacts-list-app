@@ -10,10 +10,15 @@ export const addTask = (name) =>
 
 export const getContacts = () => db.any("SELECT * FROM contacts");
 
-export const addContact = (contact) =>
+export const createContact = (contact) =>
   db.one(
     "INSERT INTO contacts(name, email, phone_number, notes ) VALUES(${name}, ${email}, ${phone_number}, ${notes} ) RETURNING *",
-    { contact },
+    {
+      name: contact.name,
+      email: contact.email,
+      phone_number: contact.phone_number,
+      notes: contact.notes,
+    },
   );
 
 function initDb() {
