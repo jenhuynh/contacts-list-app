@@ -10,9 +10,30 @@ export const addTask = (name) =>
 
 export const getContacts = () => db.any("SELECT * FROM contacts");
 
+// export const getContacts = () => db.any("SELECT contact_id FROM contacts");
+
+//click option feature
+// export const getContact = (contact_id) => {
+//   const sql = `SELECT *  FROM contacts WHERE id=${contact_id}`;
+//   return db.one(sql, { contact_id });
+// };
+
+//editing createContact
+// export const createContact = (contact) =>
+//   db.one(
+//     "INSERT INTO contacts( id, name, email, phone_number, notes ) VALUES( ${name}, ${email}, ${phone_number}, ${notes} ) RETURNING *",
+//     {
+//       id: contact.contact_id,
+//       name: contact.name,
+//       email: contact.email,
+//       phone_number: contact.phone_number,
+//       notes: contact.notes,
+//     },
+//   );
+//working createContact
 export const createContact = (contact) =>
   db.one(
-    "INSERT INTO contacts(name, email, phone_number, notes ) VALUES(${name}, ${email}, ${phone_number}, ${notes} ) RETURNING *",
+    "INSERT INTO contacts( name, email, phone_number, notes ) VALUES( ${name}, ${email}, ${phone_number}, ${notes} ) RETURNING *",
     {
       name: contact.name,
       email: contact.email,

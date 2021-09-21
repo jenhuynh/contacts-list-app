@@ -1,7 +1,8 @@
 export const getTasks = () => _get("/api/tasks");
 
 export const addTask = (name) => _post("/api/tasks", { name });
-
+// //click option feature
+// export const getContact = (contact_id) => _get(`/api/contacts/${contact_id}`);
 //get and addContact function
 // export const getContacts = () => {
 //   _get("/api/contacts");

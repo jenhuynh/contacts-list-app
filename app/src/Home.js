@@ -4,6 +4,7 @@ import * as React from "react";
 
 import Contacts from "./Contacts";
 import Tasks from "./Tasks";
+import home from "./home.css";
 
 // const App = () => (
 //   <main>

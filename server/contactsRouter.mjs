@@ -9,6 +9,11 @@ contactsRouter.get("/", async (request, response) => {
   response.json(contacts);
 });
 
+//click option feature
+// contactsRouter.get("/:contact_id", async (request, response) =>
+//   response.json(await db.getContact(request.params.contact_id)),
+// );
+
 contactsRouter.use(express.json());
 contactsRouter.post("/", async (request, response) => {
   console.log(request.body);
