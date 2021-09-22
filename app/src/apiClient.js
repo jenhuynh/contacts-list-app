@@ -6,7 +6,7 @@ export const addTask = (name) => _post("/api/tasks", { name });
 //get and addContact function
 // export const getContacts = () => {
 //   _get("/api/contacts");
-// };
+// }
 
 // export const createContact = (name) => _post("/api/contacts", { contact });
 
