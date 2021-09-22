@@ -1,18 +1,16 @@
 import * as React from "react";
 
 //contactCard
-const ContactCard = ({ selectedContact, contactDetails }) => {
+const ContactCard = ({ contact }) => {
   return (
     <section>
-      {selectedContact ? (
-        <div>
-          <h1>Contact Details</h1>
-          <p>Name: {contactDetails.name}</p>
-          <p>Email: {contactDetails.email}</p>
-          <p>Phone Number: {contactDetails.phone_number}</p>
-          <p>Note: {contactDetails.notes}</p>
-        </div>
-      ) : null}
+      <div>
+        <h1>Contact Details</h1>
+        <p>Name: {contact.name}</p>
+        <p>Email: {contact.email}</p>
+        <p>Phone Number: {contact.phone_number}</p>
+        <p>Note: {contact.notes}</p>
+      </div>
     </section>
   );
 };
