@@ -10,7 +10,7 @@ export const addTask = (name) => _post("/api/tasks", { name });
 
 // export const createContact = (name) => _post("/api/contacts", { contact });
 
-//get and addContact function
+//fetching to internet route of /api/contacts
 export const getContacts = async () => {
   const response = await fetch("/api/contacts");
   return response.json();
