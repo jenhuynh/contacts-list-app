@@ -8,6 +8,7 @@ export const getTasks = () => db.any("SELECT * FROM tasks");
 export const addTask = (name) =>
   db.one("INSERT INTO tasks(name) VALUES(${name}) RETURNING *", { name });
 
+// /defined a function getContacts and it will return an array of objects
 export const getContacts = () => db.any("SELECT * FROM contacts");
 
 // export const getContacts = () => db.any("SELECT contact_id FROM contacts");
