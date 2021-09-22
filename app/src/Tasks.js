@@ -21,11 +21,14 @@ const Tasks = () => {
 };
 
 const TaskList = ({ tasks }) => (
-  <ul>
-    {tasks.map(({ id, name }) => (
-      <li key={id}>{name}</li>
-    ))}
-  </ul>
+  <>
+    <h1>Tasks App</h1>
+    <ul>
+      {tasks.map(({ id, name }) => (
+        <li key={id}>{name}</li>
+      ))}
+    </ul>
+  </>
 );
 
 const AddTask = ({ addTask }) => {

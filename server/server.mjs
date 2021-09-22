@@ -1,11 +1,15 @@
 import express from "express";
 import mime from "mime-types";
 
+import contactsRouter from "./contactsRouter.mjs";
 import taskRouter from "./taskRouter.mjs";
 
+//express() creating the server and configuring things
 const app = express();
 
 app.use("/api/tasks", taskRouter);
+//whenever the path /api/contacts, use the contactsRouter
+app.use("/api/contacts", contactsRouter);
 
 // Do not comment out or delete this end point. The React development server
 // won't start until it pings this end point successfully.
